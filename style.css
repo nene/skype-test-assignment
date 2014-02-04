@@ -1,0 +1,508 @@
+body {
+    /* ensure normal text and background colors */
+    background-color: white;
+    color: black;
+
+    /* The font in designers mock-up looks most like Verdana to me */
+    font-family: Verdana, Arial, sans-serif;
+
+    /* use slightly smaller font than the default */
+    font-size: smaller;
+
+    /* equal whitespace on boths sides of the page and larger at bottom */
+    margin: 0;
+    padding: 0 2em 5em 2em;
+}
+
+/**
+ * Default color for all links
+ */
+a:link {
+    color: #0183b3; /* sky(pe)-blue */
+}
+
+/* Some browsers render fields with fixed font size */
+input, select, textarea {
+    font-size: 1em;
+}
+
+/**
+ * Hide the labels of search and actions forms from visual user agents.
+ * We don't use simple display: none; because some screen-readers
+ * will not read text that has this style.
+ */
+#search label,
+#nav form label {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    text-indent: -100em;
+}
+
+
+
+
+
+/**
+ * Header contains Skype and Extranet Wiki logos
+ */
+#header {
+    /* get rid of the default paragraph margins */
+    margin: 0;
+}
+#header a {
+    /* float both logos left separately */
+    float: left;
+}
+#header a img {
+    border: none;
+}
+/**
+ * Add exact whitespace.
+ * We are dealing with images, so it's ok to use pixels
+ */
+#header a.first-child {
+    padding-top: 12px;
+}
+#header a.last-child {
+    padding-top: 24px;
+    margin-left: 20px;
+}
+
+
+/**
+ * User menu is created as a definition list,
+ * dt contains username
+ * dd contains links
+ *
+ * Absolute positioning is used, to let this menu cover
+ * extranet wiki logo when the page width is reduced.
+ *
+ * Right positioning is in pixels, because the width of
+ * the search menu on the right is also in pixels.
+ */
+#user-menu {
+    position: absolute;
+    top: 1em;
+    right: 220px; /* approximately the width of search menu */
+
+    /* remove margins */
+    margin: 0;
+
+    /* pad the same amount as the right padding of body */
+    padding-right: 2em;
+
+    /* place the icon on background at right of the menu */
+    padding-left: 20px;
+    background: url("img/user-icon.png") no-repeat;
+}
+/**
+ * The links in user menu have smaller font
+ */
+#user-menu dd {
+    font-size: smaller;
+
+    /* same blue color as the links to colorize the "|" character */
+    color: #0183b3;
+
+    /**
+     * make sure, that when menu covers Extranet Wiki logo,
+     * the text is still readable
+     */
+    background-color: white;
+
+    /* remove default whitespace */
+    margin: 0;
+    padding: 0;
+}
+
+
+/**
+ * Search box at the upper right corner
+ */
+#search {
+    float: right;
+
+    /* background, that covers the whole area of search box */
+    background: url("img/search-bg.png") no-repeat;
+    width: 199px;
+    height: 74px;
+
+    /* exact whitespace at top */
+    margin: 0;
+    padding: 15px 0 0 0;
+}
+#search p {
+    margin: 0 0 7px 0; /* exact bottom margin */
+    text-align: center;
+}
+#search input#query {
+    width: 155px; /* exact width from design mock-up */
+}
+
+
+
+/**
+ * Container of all navigation
+ */
+#nav {
+    /* clear search and header floats at top */
+    clear: both;
+
+    /* backgound-gradient for menu */
+    background: url("img/content-top-left-corner.png") no-repeat;
+}
+
+#nav ul {
+    /**
+     * background of top right corner
+     * This backgound also contains the bottom of search menu
+     */
+    background: url("img/content-top-right-corner.png") no-repeat top right;
+
+    /**
+     * Make the element 35px heigh, so that backround
+     * with the same hight will become visible.
+     */
+    height: 35px;
+    line-height: 35px;
+
+    /* remove default whitespace of UL */
+    margin: 0;
+    padding: 0;
+}
+
+#nav ul li {
+    /* float all list item left */
+    list-style-type: none;
+    display: block;
+    float: left;
+
+    /**
+     * All menu items have a additional whitespace on the left side.
+     * Left is chosen, because when screen width is small, some menu items
+     * will float left in the next row, and we dont want them to appear
+     * against the left border.
+     */
+    margin: 0;
+    padding-left: 1.5em;
+}
+#nav ul li a {
+    /* no underlines on the links in menu */
+    text-decoration: none;
+}
+#nav ul li a:link {
+    /* change color of unvisited links */
+    color: #5a5a5a; /* darker gray */
+}
+
+
+/**
+ * Navigation menu has a different background.
+ */
+#nav .nav{
+    background: url("img/nav-menu-bg.png") repeat-x;
+}
+#nav li.first-nav {
+    background: url("img/nav-menu-top-left-bg.png") no-repeat;
+    /* first menu item doesn't need so much whitespace at left */
+    padding-left: 1em;
+}
+#nav li.last-nav {
+    background: url("img/nav-menu-bottom-right-bg.png") no-repeat right top;
+    /* last menu item doesn't need so much whitespace at right */
+    padding-right: 1em;
+}
+
+
+/**
+ * Actions menu has smaller font.
+ */
+#nav li.action a {
+    font-size: smaller;
+}
+/**
+ * The first item sits agains the navigation menu and
+ * doesn't need so much left whitespace as others.
+ */
+#nav li.first-action {
+    padding-left: 1em;
+}
+
+/**
+ * There is a form inside actions menu, make it appear inline.
+ */
+#nav form, #nav form p {
+    display: inline;
+    margin: 0;
+}
+
+
+/**
+ * The form appears against the top border in IE6.
+ *
+ * Moving it down a bit using the start-html-hack
+ * makes it look like in other browsers.
+ */
+* html #nav form {
+    position: relative;
+    top: 0.4em;
+}
+
+
+
+
+/**
+ * Main content area is surrounded with border
+ * helper divs have been introduced to create rounded corners at bottom
+ */
+#content {
+    background: url("img/content-bottom-left.png") no-repeat bottom left;
+}
+#content .helper-1 {
+    background: url("img/content-bottom-right.png") no-repeat bottom right;
+    padding-bottom: 3px;
+}
+#content .helper-1 .helper-2 {
+    border-left: 1px solid #b1b6b6; /* gray */
+    border-right: 1px solid #b1b6b6; /* gray */
+
+    /**
+     * Inside the border, leave equal amount of whitespace on each side
+     * But leave less whitespace at top
+     */
+    padding: 1em 2em 2em 2em;
+}
+
+
+/**
+ * Links in content area have dotted underlines
+ */
+#content a {
+    text-decoration: none;
+    border-bottom: 1px dotted;
+}
+
+/**
+ * Links to external sites have an icon in front of them
+ */
+#content a.external {
+    padding-left: 14px;
+    background: url("img/external-link-icon.png") no-repeat left center;
+}
+
+
+/**
+ * Message shown after wiki content has been saved
+ *
+ * To create rounded corners, the message is wrapped inside 4 divs.
+ */
+#content .notice {
+    background: url("img/notice-top-bg.png") no-repeat top left;
+
+    /* because notice appears at the top of the content, clear the main menu */
+    clear: both;
+}
+#content .notice div {
+    background: url("img/notice-top-right-bg.png") no-repeat top right;
+}
+#content .notice div div {
+    background: url("img/notice-bottom-bg.png") no-repeat bottom left;
+}
+#content .notice div div div {
+    background: url("img/notice-bottom-right-bg.png") no-repeat bottom right;
+    padding: 4px 0;
+}
+#content .notice div div div p {
+    background-color: #f9f4f9; /* light gray */
+    color: #8c288c; /* purple */
+    border-left: 1px solid #8c288c; /* purple */
+    border-right: 1px solid #8c288c; /* purple */
+
+    /* add small whitespace between content and borders */
+    padding: 0.5em;
+    margin: 0;
+}
+
+
+/**
+ * First level heading is different from the others.
+ */
+#content h1 {
+    color: #02aff0; /* light blue text */
+    font-weight: normal;
+
+    /* because h1 might appear at the top of the content, clear the main menu */
+    clear: both;
+
+    margin-bottom: 1.2em;
+    margin-top: 0.5em;
+}
+/**
+ * All other headings have gray underline
+ */
+#content h2,
+#content h3,
+#content h4,
+#content h5,
+#content h6 {
+    border-bottom: 1px solid #dcdcdc; /* light gray */
+    font-weight: normal;
+}
+
+
+
+/**
+ * Large form in content area.
+ *
+ * All form fiels are contained inside separate definition lists.
+ * Label is inside dt and field itself in dd.
+ *
+ * If there is enough room, then the form is shown in two columns.
+ * dl's of the first columns have class="col-1", others have class="col-1".
+ */
+#content form {
+    /* remove default whitespace */
+    margin: 0;
+    padding: 0;
+    width: 38em;
+}
+#content form dl {
+    /* Small vertical whitespace between fields */
+    margin: 0.2em 0;
+    /* all fields have the same width */
+    width: 18em;
+    /* all are floated left... */
+    float: left;
+}
+#content form dl.col-1 {
+    /* ...but only the ones in first column do the clearing */
+    clear: left;
+
+    /* whitespace at right, to keep distance with second column */
+    margin-right: 2em;
+}
+#content form dt {
+    /* labels are in bold face */
+    font-weight: bold;
+}
+#content form dd {
+    /* remove default whitespace */
+    padding: 0;
+    margin: 0;
+}
+
+/* make all fields fill the available width */
+#content form dl input,
+#content form dl select,
+#content form dl textarea {
+    width: 17.3em;
+}
+/* Set the font to be the same as body (not the defult monospace) */
+#content form dl textarea {
+    font-family: Verdana, Arial, sans-serif;
+}
+
+/**
+ * The last element of the form is p, which contains submit button.
+ *
+ * The button should be shown at the bottom of the rightmost column,
+ * but I couldn't figure out how to achieve it sensibly.
+ *
+ * The only way it seemed possible, was placing the submit before
+ * the last field, but then the field-order in source would have
+ * been unnatural. I could have fixed it with taborder attribute,
+ * then again, this would have allowed a situation, where on screen
+ * the submit is before last field, but when you tab through fields,
+ * you will first reach the last field and after that the seemingly-
+ * before-standing submit.
+ *
+ * Solved it insead by making the submit always stay at the bottom
+ * of left column.
+ */
+#content form p {
+    clear: left;
+    float: left;
+    width: 18em;
+    text-align: right;
+    padding-top: 0.2em;
+    margin: 0;
+}
+
+/**
+ * Class "error" signifies, that user has entered invalid data
+ * to the form field.
+ *
+ * Surround the dd containing a field with thin red line.
+ * We don't want to apply the red border to the field itself.
+ */
+#content form .error dd {
+    border: 1px solid red;
+}
+
+
+/**
+ * Large blue banner, that highlights some important information
+ *
+ * Because the banner has rounded cornes, it is wrapped inside
+ * three elements: <div>, <div>, <p> and <strong>.
+ * There are for separate background images, one for each corner.
+ *
+ * The whole banner is floated on the right edge.
+ */
+#content .highlight {
+    float: right;
+    width: 10em; /* quite arbitrary width */
+
+    /* white text on blue background */
+    color: white;
+    background: url("img/highlight-top-left-bg.png") no-repeat top left;
+    background-color: #00aff0; /* light blue */
+
+    /**
+     * Quite large text with reduced line-hight and centered
+     * Arial seemed the closest to the font used in mockup
+     */
+    font-size: 2.8em;
+    text-align: center;
+    line-height: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#content .highlight div {
+    background: url("img/highlight-top-right-bg.png") no-repeat top right;
+}
+#content .highlight div p {
+    background: url("img/highlight-bottom-left-bg.png") no-repeat bottom left;
+    margin: 0; /* remove the default whitespace from paragraph */
+}
+#content .highlight div p strong {
+    background: url("img/highlight-bottom-right-bg.png") no-repeat bottom right;
+
+    /* strong is not a block-level element, so we force it to look like one */
+    display: block;
+
+    /**
+     * Exact padding with pixels is used,
+     * to place content inside rounded corners,
+     * that are created with raster images.
+     */
+    padding: 36px 30px 70px 30px;
+}
+
+
+/**
+ * In case the content ends with floats,
+ * we have to take extra care of clearing them.
+ */
+#content #clear-floats {
+    clear: both;
+
+    /**
+     * Without this IE6 will sometimes show a gap
+     * between the bottom border of the page and
+     * borders on the sides of the page.
+     */
+    border: 1px solid white;
+}
+

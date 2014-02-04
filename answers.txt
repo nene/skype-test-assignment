@@ -1,0 +1,108 @@
+1. What would be the process of creating web page from designer mockups?
+
+It depends what do you mean by that question. (It's probably a sign of
+my poor English, that I don't understand it clearly.)
+
+If the question is:
+What does the term 'creating web page from designer mockups' mean?
+
+Then it's fairly simple - it's exactly what I just did, when you gave
+me the designer mockup (an image file) and I transformed it into
+HTML and CSS.
+
+But if instead you meant:
+Which process should be used when creating web page from designer mockups?
+
+Well, I haven't heard of any formal process for that job. The steps
+I usually take, to make it happen, are the following:
+
+ a) Write the (example) content of the page into text file.
+
+ b) Mark up the text semantically with HTML.
+
+ c) Start writing the stylesheet, introducing additional markup where
+    needed, and cut out pieces of mockup into separate images, when
+    a need for a background or other kind of image resource raises.
+
+ d) Make the design work in your primary browser.
+
+ e) Adjust it a little to work in some other browsers.
+
+ f) Reboot, start up Windows, load the page in IE to see, how it all fails.
+
+ g) Make the page edible to IE.
+
+
+2. Do you use "what you see is what you get tools" for coding?
+
+I haven't found a WYSIWYG tool, that could satisfy my needs. Even if I
+happen to use one, I switch to source-code mode. I'm not agains of WYSIWYG
+tools being used as code generators, but in my opinion, you can't really
+use them for coding the whole web page.
+
+
+3. Do you use <strong> or <b>, and why?
+
+A correct answer would be "yes". I use <strong>, when I want to emphasize
+something. But if I'm not emphasizing, then I have to pick something else.
+If it must be bold, because it's some term I'm defining, then I could use
+<dfn> along with a style-sheet to render it in boldface.
+
+I don't see much use for the <b> element, but I would use it, if the text
+in bold face should also distinguished from surrounding content when
+stylesheets are off and the use of any other element wouldn't be appropriate.
+
+There aren't many good examples of using <b> over <strong>, but the similar
+case of <i> v/s <em> has lots. e.g. taxonomical names like Coccinella
+septem-punctata (seven-spot ladybird) are usually presented in italics, but
+you don't want to use <em> for marking up these, because you don't want to
+emphasize the term. Using only stylesheets is also not a good option,
+because you want to distinguish these terms from the normal text even when
+stylesheets are off, so <i> it is.
+
+Anyway... I've seen religious debates over this issue, so I don't really
+want go too deep with it.
+
+
+4. Do you use validator before publishing a web page? Why is it important?
+
+After writing a program to measure how big percentage of the pages in the
+web use valid HTML, it would be a bit weird if I wouldn't care about
+validating my own pages.
+
+I think validating your pages is exactly the same as turning on compiler
+warnings when programming, or running spell-checker when writing an article.
+It looks even more important when dealing with web pages, because browsers
+wont report syntax errors.
+
+If the machine can check for some errors instead of you, then there's no
+reason not to take advantage of it. It wont ensure, that your page will work
+fine in all the browsers, but at least when it fails, you can be sure, it
+wasn't because of missing close tag.
+
+
+5. Samples of previous work.
+
+There isn't much to show.
+
+* My previous year was spent on learning environment VIKO, the front page
+  of one running instance can be seen at http://viko.opetaja.ee
+
+* I did three projects at NEWI. One of them probably still runs in intranet,
+  the website for radio was finished about the same time the radio went down,
+  and the website for Student Union was a total failure of communication.
+
+* The website for Teacher Education Center was another failure - no-one
+  could clearly imagine how the page should work (but everybody did try to
+  imagine, how it should look), and at the end it clearly didn't, as almost
+  no-one visited it.
+
+* Then there is http://www.quicksummer.com/, which I did on my first year
+  in university.
+
+I have helped out several people on converting their sites to valid HTML+CSS.
+But they all have moved on since then, and there's little left of my code
+on their pages.
+
+
+

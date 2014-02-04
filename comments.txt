@@ -1,0 +1,80 @@
+COMMENTS
+
+
+The mockup didn't contain any information about how visited links should look,
+so I assumed the default purple color.
+
+
+
+The search box at top had no label in mockup, so I gave it a label and
+made it disappear in visual user agents supporting CSS. I also removed
+the default value "Search" from the search box, as this would look weird
+when stylesheets are off and the label "Search" is also visible.
+But to make it still clear, that this is a search box, when stylesheets
+are on, I added a JavaScript which inserts the text into that box when
+page loads.
+
+
+
+The mockup had a select box in the actions menu, but no corresponding
+submit button. The obvious implementation of this would have been with
+JavaScript - when user makes the selection, form is automatically submitted.
+First of all this would have been highly JavaScript-dependent. I could
+made a solution where submit button is removed only when JavaScript is
+available, but this would have still left me with another problem:
+when JavaScript is enabled and user has no pointing device, he will
+tab to the select box and push down arrow, but this would have instantly
+submitted the form with second element selected. Because only few people
+know, that they can overcome this problem by pressing alt+down, I chose
+to add an explicit submit button.
+
+
+
+I was a bit confused with the larger form at the bottom of the page.
+I tried to implement it so, that when there is enough space, the form
+is shown in two columns, but when the page is too narrow, all fields
+are in one column.
+
+Because I didn't wanted to hard-code the position of all elements,
+I wasn't able to place the submit button so, that when there are two
+columns, the submit button would appear under the right hand column,
+and in the case of one-column-form, under the first column.
+
+So I decided to keep it always under the first column.
+
+
+
+I did some JavaScript-based form validation, but it was sort-of
+guessing, because there wasn't any identification of weather
+some or all fields should be required. So I decided, that first
+six fields are required and that E-mail address should contain
+at least the at-character.
+
+The mockup only showed, that invalid fields should be surrounded
+with red line, but that didn't seem very usable - you can't tell
+what's wrong with your input, if the only response is "BAD INPUT".
+So I added a popup with additional information.
+
+The form-validation script is implemented so, that when there is
+a <dl> inside form with class "required", the corresponding field
+is checked to be filled. Similarly <dl>'s with class "e-mail"
+are expected to contain an e-mail address.
+
+
+
+I don't know how I could fullfill this requirement:
+"Page should be ready for deployment to server without any changes."
+
+As I understand it, there is no way you could just upload this
+HTML, CSS and JavaScript to the web server, so that underlying
+wiki-engine would be able to make use of it. I understand, that to
+apply this look to the wiki, you would need to create templates
+in a language understandable to the engine, and then upload these
+templates to the server. But by my definition, this process will
+make some changes.
+
+I see no reason, why you should want to deploy this HTML page to the
+server without making any changes - a static HTML page - what use
+would it be?
+
+
